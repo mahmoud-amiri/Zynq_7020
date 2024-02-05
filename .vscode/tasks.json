@@ -1,0 +1,61 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "Build Vivado Project",
+            "type": "shell",
+            "command": "vivado",
+            "args": [
+                "-mode", "batch",
+                "-source", "${workspaceFolder}/script/build_pl.tcl"
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "problemMatcher": []
+        },
+        {
+            "label": "Build Vitis Project",
+            "type": "shell",
+            "command": "xsct",
+            "args": [
+                "-mode", "batch",
+                "-source", "${workspaceFolder}/script/build_ps.tcl"
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "problemMatcher": []
+        },
+        {
+            "label": "Generate Bitstream",
+            "type": "shell",
+            "command": "vivado",
+            "args": [
+                "-mode", "batch",
+                "-source", "${workspaceFolder}/script/gen_bitstream.tcl"
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "problemMatcher": []
+        },
+        {
+            "label": "Save Block Design",
+            "type": "shell",
+            "command": "vivado",
+            "args": [
+                "-mode", "batch",
+                "-source", "${workspaceFolder}/script/save_bd.tcl"
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "problemMatcher": []
+        }
+    ]
+}
